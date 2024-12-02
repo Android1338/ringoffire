@@ -7,7 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 export class PlayerComponent {
 
+  defaultImage = '../assets/players/default.png';
+
   @Input() name: string = '';
   @Input() playerActive: boolean = false;
+  
+
+  onImageError(event: Event): void {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.src = this.defaultImage;
+  }
 
 }

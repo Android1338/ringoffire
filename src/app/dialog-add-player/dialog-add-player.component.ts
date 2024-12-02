@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-add-player',
@@ -8,9 +9,10 @@ import { Component } from '@angular/core';
 export class DialogAddPlayerComponent {
   name: string = '';
 
+  constructor(public dialogRef: MatDialogRef<DialogAddPlayerComponent>) {}
+
   onNoClick(): void {
-    // Logik, die ausgeführt werden soll, wenn der Button geklickt wird
-    console.log('No Thanks button clicked');
+    this.dialogRef.close();
   }
 
 }
